@@ -1,0 +1,21 @@
+name: CI
+
+on: [ push ]
+
+jobs:
+  test:
+    name: Push to SSH
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        nodejs: [ 12 ]
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.nodejs }}
+    - name: Install and Build
+      run: |
+        npm run build

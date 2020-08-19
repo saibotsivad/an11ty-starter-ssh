@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npx an11ty build site saibotsivad/fiddle-11ty-base",
+    "dev": "npx a11ty dev site saibotsivad/fiddle-11ty-base"
+  }
+}
